@@ -1,1 +1,82 @@
-<p>update-account works!</p>
+<main class="my-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">Update Account</h2>
+        <form
+          #updateAccountForm="ngForm"
+          (ngSubmit)="updateAccount()"
+          class="mb-5 pb-5"
+        >
+          <div class="mb-3">
+            <label for="accountType" class="form-label">Account Type</label>
+            <select
+              class="form-select"
+              th:field="*{accountType}"
+              id="accountType"
+              name="accountType"
+              [(ngModel)]="account.accountType"
+            >
+              <option
+                value="Checking"
+                th:selected="${accountType == 'Checking'}"
+              >
+                Checking
+              </option>
+              <option
+                value="Investment"
+                th:selected="${accountType == 'Investment'}"
+              >
+                Investment
+              </option>
+              <option value="Savings" th:selected="${accountType == 'Savings'}">
+                Savings
+              </option>
+            </select>
+            <span
+              th:if="${#fields.hasErrors('accountType')}"
+              th:errors="*{accountType}"
+              class="text-danger"
+            ></span>
+          </div>
+          <div class="mb-3">
+            <label for="accountBalance" class="form-label"
+              >Account Balance</label
+            >
+            <input
+              type="number"
+              th:field="*{accountBalance}"
+              class="form-control"
+              id="accountBalance"
+              name="accountBalance"
+              step="0.5"
+              [(ngModel)]="account.accountBalance"
+            />
+            <span
+              th:if="${#fields.hasErrors('accountBalance')}"
+              th:errors="*{accountBalance}"
+              class="text-danger"
+            ></span>
+          </div>
+          <div class="mb-3">
+            <label for="accountHolder" class="form-label">Account Holder</label>
+            <input
+              type="text"
+              th:field="*{accountHolder}"
+              class="form-control"
+              id="accountHolder"
+              name="accountHolder"
+              [(ngModel)]="account.accountHolder"
+            />
+            <span
+              th:if="${#fields.hasErrors('accountHolder')}"
+              th:errors="*{accountHolder}"
+              class="text-danger"
+            ></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
