@@ -11,7 +11,7 @@
           class="border p-4 rounded-3 bg-light"
         >
           <div class="row g-3">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <input
                 type="number"
                 class="form-control"
@@ -19,14 +19,16 @@
                 name="accountId"
                 ngModel
                 #accountId="ngModel"
+                (keyup)="filterAccounts(filterAccountsForm)"
               />
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <select
                 class="form-select"
                 name="accountType"
                 ngModel
                 #accountType="ngModel"
+                (change)="filterAccounts(filterAccountsForm)"
               >
                 <option value="">Account Type</option>
                 <option value="Checking">Checking</option>
@@ -34,7 +36,7 @@
                 <option value="Savings">Savings</option>
               </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <input
                 type="text"
                 class="form-control"
@@ -42,12 +44,8 @@
                 name="accountHolder"
                 ngModel
                 #accountHolder="ngModel"
+                (keyup)="filterAccounts(filterAccountsForm)"
               />
-            </div>
-            <div class="col-md-3 d-flex align-items-end justify-content-center">
-              <button type="submit" class="btn btn-primary">
-                Filter Accounts
-              </button>
             </div>
           </div>
         </form>

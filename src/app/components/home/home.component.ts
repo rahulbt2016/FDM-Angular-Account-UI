@@ -34,7 +34,6 @@ export class HomeComponent {
     let filter: IFilter = filterAccountsForm.value;
     this.accountService.filterAccounts(filter).subscribe((accounts) => {
       this.accounts = accounts;
-      filterAccountsForm.reset();
     });
   }
 }
