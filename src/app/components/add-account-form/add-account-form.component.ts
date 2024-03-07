@@ -3,11 +3,12 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
 import { IAccount } from '../../models/account.model';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-account-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './add-account-form.component.html',
   styleUrl: './add-account-form.component.css',
 })

@@ -10,6 +10,7 @@
               class="form-select"
               id="accountType"
               name="accountType"
+              required
               ngModel
               #accountType="ngModel"
             >
@@ -17,11 +18,15 @@
               <option value="Investment">Investment</option>
               <option value="Savings">Savings</option>
             </select>
-            <!-- <span
-              th:if="${#fields.hasErrors('accountType')}"
-              th:errors="*{accountType}"
-              class="text-danger"
-            ></span> -->
+            <div
+              class="alert alert-danger"
+              *ngIf="accountType.touched && !accountType.valid"
+            >
+              <i class="fa fa-exclamation-triangle mx-3"></i>
+              <span *ngIf="accountType.errors?.['required']"
+                >Please select a valid account type.</span
+              >
+            </div>
           </div>
           <div class="mb-3">
             <label for="accountBalance" class="form-label"
@@ -34,14 +39,23 @@
               id="accountBalance"
               name="accountBalance"
               step="0.5"
+              required
+              min="0"
               ngModel
               #accountBalance="ngModel"
             />
-            <!-- <span
-              th:if="${#fields.hasErrors('accountBalance')}"
-              th:errors="*{accountBalance}"
-              class="text-danger"
-            ></span> -->
+            <div
+              class="alert alert-danger"
+              *ngIf="accountBalance.touched && !accountBalance.valid"
+            >
+              <i class="fa fa-exclamation-triangle mx-3"></i>
+              <span *ngIf="accountBalance.errors?.['required']"
+                >Balance cannot be empty.</span
+              >
+              <span *ngIf="accountBalance.errors?.['min']"
+                >Balance cannot be less than 0.</span
+              >
+            </div>
           </div>
           <div class="mb-3">
             <label for="accountHolder" class="form-label">Account Holder</label>
@@ -51,16 +65,27 @@
               class="form-control"
               id="accountHolder"
               name="accountHolder"
+              required
               ngModel
               #accountHolder="ngModel"
             />
-            <!-- <span
-              th:if="${#fields.hasErrors('accountHolder')}"
-              th:errors="*{accountHolder}"
-              class="text-danger"
-            ></span> -->
+            <div
+              class="alert alert-danger"
+              *ngIf="accountHolder.touched && !accountHolder.valid"
+            >
+              <i class="fa fa-exclamation-triangle mx-3"></i>
+              <span *ngIf="accountHolder.errors?.['required']"
+                >Account holder cannot be empty.</span
+              >
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add New Account</button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!form.valid"
+          >
+            Add New Account
+          </button>
         </form>
       </div>
     </div>

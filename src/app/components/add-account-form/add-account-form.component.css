@@ -1,0 +1,9 @@
+.alert {
+  margin-top: 0.5em;
+}
+
+.form-control.ng-touched.ng-invalid,
+.form-select.ng-touched.ng-invalid {
+  border: 2px solid transparent;
+  box-shadow: 0 0 5px 1px red;
+}
