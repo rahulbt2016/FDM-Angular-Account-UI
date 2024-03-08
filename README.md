@@ -98,3 +98,13 @@ Replace `localhost:8080` with the base URL of your API in the frontend Angular a
 ## Unit Test Results
 
 ![Unit Tests](image.png)
+
+##User Interface (UI)
+
+![Home Page](image-1.png)
+
+![Add Account Page](image-2.png)
+
+![Update Account Page](image-3.png)
+
+![Filter Example](image-4.png)
