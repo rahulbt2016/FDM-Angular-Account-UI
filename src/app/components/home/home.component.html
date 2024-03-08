@@ -68,7 +68,7 @@
             <tr *ngFor="let account of accounts">
               <td>{{ account.accountId }}</td>
               <td>{{ account.accountType }}</td>
-              <td>{{ account.accountBalance }}</td>
+              <td>{{ account.accountBalance | currency }}</td>
               <td>{{ account.accountHolder }}</td>
               <td>
                 <div class="d-inline">
