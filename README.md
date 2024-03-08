@@ -99,7 +99,7 @@ Replace `localhost:8080` with the base URL of your API in the frontend Angular a
 
 ![Unit Tests](image.png)
 
-##User Interface (UI)
+## User Interface (UI)
 
 ![Home Page](image-1.png)
 
