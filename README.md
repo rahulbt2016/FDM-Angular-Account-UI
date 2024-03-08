@@ -94,3 +94,7 @@ Replace `localhost:8080` with the base URL of your API in the frontend Angular a
   - Status Code: 200
   - Content Type: application/json
   - Body: List of account objects
+
+## Unit Test Results
+
+![Unit Tests](image.png)

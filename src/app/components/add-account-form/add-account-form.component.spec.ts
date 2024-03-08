@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddAccountFormComponent } from './add-account-form.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AddAccountFormComponent', () => {
   let component: AddAccountFormComponent;
@@ -8,10 +9,9 @@ describe('AddAccountFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddAccountFormComponent]
-    })
-    .compileComponents();
-    
+      imports: [AddAccountFormComponent, HttpClientTestingModule],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AddAccountFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
