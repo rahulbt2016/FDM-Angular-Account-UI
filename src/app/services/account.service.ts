@@ -45,6 +45,12 @@ export class AccountService {
     if (filter.accountHolder) {
       params = params.append('accountHolder', filter.accountHolder);
     }
+    if (filter.minAccountBalance) {
+      params = params.append(
+        'minAccountBalance',
+        filter.minAccountBalance.toString()
+      );
+    }
     return this.http.get<IAccount[]>(`${this.baseUrl}/filterAccounts`, {
       params,
     });
